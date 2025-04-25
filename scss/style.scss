@@ -758,3 +758,61 @@ $gap-gallery: 15px;
       width: 90%; /* Ajusta el formulario para que ocupe el 90% del ancho */
       margin: 0 auto; /* Centra el formulario */
   }
+
+
+
+
+  // Estilos generales del menú
+.menu-toggle {
+  display: none;  // Esconde el checkbox que controlará el menú
+}
+
+// Estilos para el ícono de la hamburguesa
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+  
+  span {
+    height: 4px;
+    width: 100%;
+    background: #333;
+    border-radius: 2px;
+  }
+}
+
+// Estilos del menú
+.menu2 {
+  display: none;  // El menú estará oculto por defecto
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgb(32, 30, 160);  // Color de fondo
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  z-index: 50;
+  
+  li {
+    margin: 10px 0;
+  }
+}
+
+// Estilos específicos para pantallas pequeñas
+@media (max-width: 768px) {
+  // Muestra el icono de la hamburguesa solo en pantallas pequeñas
+  .menu-icon {
+    display: flex;
+    z-index: 100;  // Asegúrate de que el ícono esté por encima del contenido
+  }
+
+  // Mostrar el menú cuando el checkbox esté marcado
+  .menu-toggle:checked + .menu-icon + .menu2 {
+    display: flex;
+  }
+}

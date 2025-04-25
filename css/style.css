@@ -33,48 +33,73 @@ h1 {
 
 
 /* AQUI SE TRABAJA EL MENU DE TODAS LAS LANDINGS MENOS EL HOMEEEEEEEE */
-.nav2 {
-    background: linear-gradient(to right, #273dbb, #9654ff);
-    height: 100px;
+/* Estilos generales */
+.menu-toggle {
+  display: none;
+}
+
+/* Estilo del ícono de la hamburguesa */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.menu-icon span {
+  height: 4px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  /* Menú hamburguesa para la nav1 */
+  .menu-icon {
     display: flex;
-    justify-content: flex-start; /* Asegura que el logo esté a la izquierda */
-    flex-grow: 1; /* Permite que el menú ocupe el espacio restante */
-    align-items: center; /* Alinea verticalmente */
-    
-}
+  }
 
-.nav2 li a { 
-    color: aliceblue;
-    font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    
-}
-
-.menu2 {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0 auto; /* Centra el menú dentro de su contenedor */
-    justify-content: center; /* Asegura que los <li> estén alineados al centro */
-   
-}
-
-.menu2 li {
-    margin:  55px; /* Espaciado entre elementos */
-    
-}
-
-.menu-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 50px;
-    padding: 0px 10px;
-    position: fixed;
+  /* Oculta el menú por defecto */
+  .menu, .menu2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    background-color: rgb(32, 30, 160); /* Cambia el color si es necesario */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    z-index: 50;
+  }
+
+  .menu2 {
+    background-color: #222; /* Cambia el color si es necesario */
+  }
+
+  /* Los items del menú */
+  .menu li, .menu2 li {
+    margin: 10px 0;
+  }
+
+  /* Cuando el checkbox está marcado, muestra el menú */
+  .menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-toggle:checked + .menu-icon + .menu2 {
+    display: flex;
+  }
+
+  /* Estilo del icono hamburguesa */
+  .menu2 {
+    top: 50px; /* Ajusta la posición según el diseño */
+  }
 }
+
 
 
 .logo2 img{
@@ -85,6 +110,66 @@ h1 {
     
     
 }
+
+
+/* Oculta el checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Estilo del ícono de la hamburguesa */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+
+.menu-icon span {
+  height: 4px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  /* Muestra el icono de la hamburguesa solo en pantallas pequeñas */
+  .menu-icon {
+    display: flex;
+  }
+
+  /* El menú está oculto por defecto */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgb(32, 30, 160);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    z-index: 50;
+  }
+
+  /* Los items del menú */
+  .menu li {
+    margin: 10px 0;
+  }
+
+  /* Cuando el checkbox está marcado (cuando se hace clic en el ícono de la hamburguesa), muestra el menú */
+  .menu-toggle:checked + .menu-icon + nav .menu {
+    display: flex;
+  }
+}
+
+
+
+
+
 
 
 
