@@ -34,137 +34,10 @@ h1 {
 
 /* AQUI SE TRABAJA EL MENU DE TODAS LAS LANDINGS MENOS EL HOMEEEEEEEE */
 /* Estilos generales */
-.menu-toggle {
-  display: none;
-}
 
-/* Estilo del ícono de la hamburguesa */
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  justify-content: space-between;
-}
-
-.menu-icon span {
-  height: 4px;
-  width: 100%;
-  background: #333;
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  /* Menú hamburguesa para la nav1 */
-  .menu-icon {
-    display: flex;
-  }
-
-  /* Oculta el menú por defecto */
-  .menu, .menu2 {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgb(32, 30, 160); /* Cambia el color si es necesario */
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid #ccc;
-    z-index: 50;
-  }
-
-  .menu2 {
-    background-color: #222; /* Cambia el color si es necesario */
-  }
-
-  /* Los items del menú */
-  .menu li, .menu2 li {
-    margin: 10px 0;
-  }
-
-  /* Cuando el checkbox está marcado, muestra el menú */
-  .menu-toggle:checked + .menu-icon + .menu {
-    display: flex;
-  }
-
-  .menu-toggle:checked + .menu-icon + .menu2 {
-    display: flex;
-  }
-
-  /* Estilo del icono hamburguesa */
-  .menu2 {
-    top: 50px; /* Ajusta la posición según el diseño */
-  }
-}
+/* Esconde el menú por defecto */
 
 
-
-.logo2 img{
-    height: 70px;
-    position: relative;
-    display: block;
-    padding-left: 70px;
-    
-    
-}
-
-
-/* Oculta el checkbox */
-.menu-toggle {
-  display: none;
-}
-
-/* Estilo del ícono de la hamburguesa */
-.menu-icon {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 30px;
-  height: 25px;
-  justify-content: space-between;
-}
-
-.menu-icon span {
-  height: 4px;
-  width: 100%;
-  background: #333;
-  border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-  /* Muestra el icono de la hamburguesa solo en pantallas pequeñas */
-  .menu-icon {
-    display: flex;
-  }
-
-  /* El menú está oculto por defecto */
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgb(32, 30, 160);
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid #ccc;
-    z-index: 50;
-  }
-
-  /* Los items del menú */
-  .menu li {
-    margin: 10px 0;
-  }
-
-  /* Cuando el checkbox está marcado (cuando se hace clic en el ícono de la hamburguesa), muestra el menú */
-  .menu-toggle:checked + .menu-icon + nav .menu {
-    display: flex;
-  }
-}
 
 
 
@@ -360,6 +233,122 @@ selector .elementor-button {
         box-shadow: 0 0 0 0 rgba(26, 51, 244, 0);
     }
 }
+
+
+
+@media only screen and (max-width: 768px) {
+  .banner1 {
+    background-color: #3f00ff;
+    height: auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+  }
+
+  .banner1 img {
+    display: none !important;
+  }
+
+  .bannertext {
+    position: relative;
+    z-index: 10;
+    max-width: 90%;
+    color: white;
+  }
+
+  .bannertext h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+    padding: 0;
+    text-align: center;
+  }
+
+  .bannertext p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .banner-button {
+    font-size: 1rem;
+    padding: 10px 18px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #ffcc00;
+    color: black;
+    text-align: center;
+  }
+
+  .menu-container,
+  .menu {
+    display: none;
+  }
+}
+
+
+/* Estilo base: botón oculto por defecto */
+.hamburger-icon {
+  display: none;
+}
+
+/* Estilo responsive */
+@media only screen and (max-width: 768px) {
+  .hamburger-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #3f00ff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    z-index: 1000;
+  }
+
+  nav .menu.active {
+    display: flex;
+  }
+
+  nav .menu li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  nav .menu li a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
 
 
 
@@ -835,133 +824,14 @@ footer {
 
 
 /* Móvil (pantallas menores a 768px) */
-@media only screen and (max-width: 767px) {
-    .banner1 {
-        height: 60vh; /* Reduce la altura del banner */
-    }
 
-    .bannertext h1 {
-        font-size: 2.5rem; /* Reduce el tamaño del título */
-        padding-top: 50px;
-        text-align: center; /* Centra el texto */
-    }
 
-    .bannertext p {
-        font-size: 1.5rem; /* Reduce el tamaño del párrafo */
-        text-align: center; /* Centra el texto */
-        padding-right: 0; /* Elimina el padding */
-    }
 
-    .logo img {
-        height: 40px; /* Reduce el tamaño del logo */
-    }
 
-    .menu {
-        flex-direction: column; /* Apila los elementos del menú */
-    }
 
-    .menu li {
-        margin: 10px; /* Reduce el margen entre los elementos del menú */
-    }
-
-    .banner-button {
-        font-size: 1.5rem; /* Reduce el tamaño del botón */
-        padding: 10px 20px; /* Ajusta el padding */
-    }
-}
-
-/* Tablet (pantallas entre 768px y 1024px) */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .banner1 {
-        height: 75vh; /* Ajusta la altura del banner para tablet */
-    }
-
-    .bannertext h1 {
-        font-size: 3rem; /* Ajusta el tamaño del título */
-        padding-top: 80px;
-    }
-
-    .bannertext p {
-        font-size: 2rem; /* Ajusta el tamaño del párrafo */
-        padding-right: 500px;
-    }
-
-    .logo img {
-        height: 50px; /* Ajusta el tamaño del logo */
-    }
-
-    .menu {
-        flex-direction: row; /* Alinea los elementos del menú horizontalmente */
-    }
-
-    .menu li {
-        margin: 20px; /* Ajusta el margen entre los elementos del menú */
-    }
-
-    .banner-button {
-        font-size: 1.8rem; /* Ajusta el tamaño del botón */
-        padding: 12px 25px; /* Ajusta el padding */
-    }
-}
-
-/* Notebook y dispositivos de escritorio (pantallas mayores a 1024px) */
-@media only screen and (min-width: 1025px) {
-    .banner1 {
-        height: 100vh; /* Mantiene la altura completa en pantallas grandes */
-    }
-
-    .bannertext h1 {
-        font-size: 4.5rem; /* Mantiene el tamaño grande del título */
-        padding-top: 125px;
-    }
-
-    .bannertext p {
-        font-size: 2.4rem; /* Mantiene el tamaño medio del párrafo */
-        padding-right: 1000px;
-    }
-
-    .logo img {
-        height: 60px; /* Mantiene el tamaño del logo */
-    }
-
-    .menu {
-        flex-direction: row; /* Mantiene el menú en fila */
-    }
-
-    .menu li {
-        margin: 55px; /* Mantiene el margen entre los elementos del menú */
-    }
-
-    .banner-button {
-        font-size: 2rem; /* Mantiene el tamaño del botón */
-        padding: 15px 30px; /* Mantiene el padding */
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    .navbar {
-      flex-direction: column;
-      align-items: center;
-    }
   
-    .container {
-      padding: 10px;
-    }
   
-    .header, .footer {
-      padding: 10px;
-    }
-  
-    /* Ajustar imágenes y elementos en móvil */
-    .image {
-      width: 100%;
-      height: auto;
-    }
-  
-    .text {
-      font-size: 14px;
-    }
-  }
+
   
   /* Tablet (pantallas entre 768px y 1024px) */
   @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -974,7 +844,7 @@ footer {
       padding: 15px;
     }
   
-    .header, .footer {
+    .header, {
       padding: 15px;
     }
   
@@ -1002,7 +872,7 @@ footer {
     }
   
     .header, .footer {
-      padding: 20px;
+      padding: 10px;
     }
   
     /* Ajustes de texto para pantallas grandes */
@@ -1096,9 +966,7 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 /* MÓVILES */
 @media (max-width: 768px) {
-    .menu {
-        display: none; /* Oculta el menú en móviles (se puede agregar un menú hamburguesa) */
-    }
+   
 
     .banner-text h1 {
         font-size: 2rem;
@@ -1301,6 +1169,12 @@ a {
   transition: background-color 0.3s ease;
   animation: pulse-blue 2s infinite;
 }
+
+
+/* Estilos existentes para tu diseño */
+
+
+
 
 @keyframes pulse-blue {
   0% {
