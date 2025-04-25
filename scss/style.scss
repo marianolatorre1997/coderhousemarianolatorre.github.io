@@ -1,0 +1,716 @@
+// Variables
+$main-width: 1400px;
+$padding-horizontal: 20px;
+$font-main-color: rgb(255, 36, 255);
+$font-size-p: 22px;
+$font-size-nav: 18px;
+$heading-color: #4c00ff;
+$nav-gradient-start: #273dbb;
+$nav-gradient-end: #9654ff;
+$logo-height: 70px;
+$spacing-li: 55px;
+$padding-logo-left: 70px;
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.containator {
+  width: $main-width;
+  margin: 0 auto;
+  padding: 0 $padding-horizontal;
+}
+
+p {
+  color: $font-main-color;
+  font-size: $font-size-p;
+  margin: 20px;
+}
+
+h1 {
+  color: $heading-color;
+  text-align: center;
+}
+
+/* Menú de todas las landings menos el home */
+.nav2 {
+  background: linear-gradient(to right, $nav-gradient-start, $nav-gradient-end);
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+  align-items: center;
+
+  li {
+    a {
+      color: aliceblue;
+      font-size: $font-size-nav;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
+}
+
+.menu2 {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+
+  li {
+    margin: $spacing-li;
+  }
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  padding: 0 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo2 {
+  img {
+    height: $logo-height;
+    position: relative;
+    display: block;
+    padding-left: $padding-logo-left;
+  }
+}
+
+
+// Variables adicionales
+$banner-height: 100vh;
+$banner-h1-size: 4.5rem;
+$banner-p-size: 2.4rem;
+$banner-h1-color: azure;
+$banner-p-color: rgb(255, 208, 0);
+$link-color: #f8f8f8;
+$logo-banner-height: 60px;
+$menu-width: 80%;
+$menu-spacing: 55px;
+
+/* MENU SOBRE BANNER */
+.banner1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: $banner-height;
+
+  img {
+    width: 100%;
+    height: $banner-height;
+    z-index: -1;
+    object-fit: cover;
+    position: absolute;
+  }
+}
+
+.bannertext {
+  h1 {
+    font-size: $banner-h1-size;
+    font-weight: bold;
+    margin: 0;
+    color: $banner-h1-color;
+    padding-top: 125px;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  p {
+    font-size: $banner-p-size;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+    color: $banner-p-color;
+    text-align: left;
+    padding-right: 1000px;
+  }
+}
+
+.logo {
+  margin-right: auto;
+
+  img {
+    height: $logo-banner-height;
+    position: relative;
+    display: block;
+    padding-bottom: 0;
+  }
+}
+
+.menu-container {
+  position: absolute;
+  top: -20px;
+  align-items: center;
+  justify-content: center;
+  width: $menu-width;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+  flex-grow: 1;
+
+  li {
+    margin: $menu-spacing;
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Variables adicionales
+$font-family-heading: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$link-color-default: aliceblue;
+$banner-btn-color: black;
+$banner-btn-bg: #ffcc00;
+$banner-btn-size: 2rem;
+$animation-color: rgba(26, 51, 244, 0.7); // Azul pulsante original
+
+/* TEXTO SOBRE BANNER */
+div {
+  color: aqua;
+
+  p {
+    color: white;
+  }
+}
+
+nav {
+  li {
+    a {
+      color: $link-color-default;
+      font-size: 18px;
+      font-family: $font-family-heading;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.banner-button {
+  display: inline-block;
+  background-color: $banner-btn-bg;
+  font-family: $font-family-heading;
+  color: $banner-btn-color;
+  font-size: $banner-btn-size;
+  font-weight: bold;
+  padding: 15px 30px;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  animation: pulse-blue 2s infinite;
+}
+
+// Aplica también a botones de Elementor si querés mantener compatibilidad
+.elementor-button {
+  animation: pulse-blue 2s infinite;
+}
+
+// Animación pulse
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 $animation-color;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 30px rgba(26, 51, 244, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(26, 51, 244, 0);
+  }
+}
+
+
+// Variables para galería
+$font-family-heading: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+$img-height: 300px;
+$img-border-radius: 15px;
+$hover-scale: 1.05;
+$max-width-gallery: 1300px;
+$gap-gallery: 15px;
+
+.galeria-nueva {
+  max-width: $max-width-gallery;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+    font-family: $font-family-heading;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    height: 250px;
+  }
+}
+
+// Estilo general para imágenes fluidas (si es clase compartida en otros lados)
+.img-fluid {
+  width: 100%;
+  height: $img-height;
+  object-fit: cover;
+  border-radius: $img-border-radius;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale($hover-scale);
+  }
+}
+
+// Grid de galería
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap-gallery;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    max-width: 450px;
+    height: $img-height;
+    object-fit: cover;
+    border-radius: $img-border-radius;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale($hover-scale);
+    }
+  }
+}
+
+// Posible otra galería (grid alternativo)
+.grid-nueva {
+  img {
+    width: 450px;
+    height: $img-height;
+    padding-top: 0;
+    object-fit: cover;
+    border-radius: $img-border-radius;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale($hover-scale);
+    }
+  
+
+
+
+.galeria-nueva-servicios {
+  // Estilos generales aquí si es necesario
+
+  h2 {
+    // Estilos generales para h2 aquí si es necesario
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+
+.grid-galeria-servicios {
+  display: grid;
+
+  img {
+    width: 100%;
+    
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 250px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.banner1 {
+  @media (max-width: 767px) {
+    height: 60vh;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: 75vh;
+  }
+}
+
+.bannertext {
+  h1 {
+    @media (max-width: 767px) {
+      font-size: 2.5rem;
+      padding-top: 50px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      font-size: 3rem;
+      padding-top: 80px;
+    }
+  }
+
+  p {
+    @media (max-width: 767px) {
+      font-size: 1.5rem;
+      text-align: center;
+      padding-right: 0;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      font-size: 2rem;
+      padding-right: 500px;
+    }
+  }
+}
+
+.logo {
+  img {
+    @media (max-width: 767px) {
+      height: 40px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      height: 50px;
+    }
+  }
+}
+
+.menu {
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-direction: row;
+  }
+
+  li {
+    @media (max-width: 767px) {
+      margin: 10px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin: 20px;
+    }
+  }
+}
+
+.banner-button {
+  @media (max-width: 767px) {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 1.8rem;
+    padding: 12px 25px;
+  }
+}
+
+
+.banner1 {
+  @media (min-width: 1025px) {
+    height: 100vh;
+  }
+}
+
+.bannertext {
+  h1 {
+    @media (min-width: 1025px) {
+      font-size: 4.5rem;
+      padding-top: 125px;
+    }
+  }
+
+  p {
+    @media (min-width: 1025px) {
+      font-size: 2.4rem;
+      padding-right: 1000px;
+    }
+  }
+}
+
+.logo {
+  img {
+    @media (min-width: 1025px) {
+      height: 60px;
+    }
+  }
+}
+
+.menu {
+  @media (min-width: 1025px) {
+    flex-direction: row;
+  }
+
+  li {
+    @media (min-width: 1025px) {
+      margin: 55px;
+    }
+  }
+}
+
+.banner-button {
+  @media (min-width: 1025px) {
+    font-size: 2rem;
+    padding: 15px 30px;
+  }
+}
+
+.navbar {
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.container {
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 15px;
+  }
+}
+
+.header, .footer {
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 15px;
+  }
+}
+
+.image {
+  @media (max-width: 767px) {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.text {
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 2.4rem;
+  }
+}
+
+
+.navbar {
+  @media (min-width: 1025px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.container {
+  @media (min-width: 1025px) {
+    padding: 20px;
+  }
+}
+
+.header, .footer {
+  @media (min-width: 1025px) {
+    padding: 20px;
+  }
+}
+
+.text {
+  @media (min-width: 1025px) {
+    font-size: 18px;
+  }
+}
+
+.image {
+  @media (min-width: 1025px) {
+    width: 50%;
+    height: auto;
+  }
+}
+
+
+.bannersomos {
+  padding-top: 25px;
+  position: relative;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  overflow: hidden;
+  height: 400px; /* Ajustado a la altura del banner */
+  width: 100%;
+  flex-direction: column; /* Ajusta los elementos para poner los elementos como columnas */
+
+  /* Imagen de fondo */
+  img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ajusta la imagen sin deformarla */
+      z-index: -1; /* Envía la imagen detrás del texto */
+  }
+}
+
+.banner_container {
+  max-width: 1200px; /* Contiene el texto dentro de un ancho específico */
+  width: 100%; /* Para que el contenido responda correctamente */
+  padding: 20px; /* Espaciado interno */
+  color: white; /* Ajusta el color del texto para que sea legible */
+  background: rgba(0, 0, 0, 0.3); /* Fondo semitransparente para mejorar legibilidad */
+  transform: translateY(-10px); /* Mueve el contenido 10px hacia arriba */
+  border-radius: 15px;
+
+  /* Estilos para el título */
+  h1 {
+      font-size: 43px;
+      color: #f8f8f8;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
+
+.container_imagen_nosotros {
+  display: flex;
+  align-items: center;
+  max-width: 1200px; /* Contiene el texto dentro de un ancho específico */
+  margin: 50px auto;
+
+  /* Imagen de la sección */
+  img {
+      width: 800px;
+      height: 500px;
+      padding-top: 0px;
+      object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+      border-radius: 15px; /* Bordes redondeados */
+  }
+
+  /* Contenedor del texto dentro de la sección */
+  .text {
+      flex: 1;
+  }
+
+  /* Estilo del párrafo dentro de la sección */
+  p {
+      color: #273dbb;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
+
+
+/* MÓVILES */
+@media (max-width: 768px) {
+  /* Menú */
+  .menu {
+      display: none; /* Oculta el menú en móviles (se puede agregar un menú hamburguesa) */
+  }
+
+  /* Estilo para el título en la sección del banner */
+  .banner-text h1 {
+      font-size: 2rem; /* Reduce el tamaño del título */
+  }
+
+  /* Estilo para el párrafo en la sección del banner */
+  .banner-text p {
+      font-size: 1rem; /* Reduce el tamaño del párrafo */
+  }
+
+  /* Galería */
+  .galeria {
+      display: flex;
+      flex-direction: column; /* Organiza las imágenes de manera vertical */
+      align-items: center; /* Centra las imágenes */
+  }
+
+  .galeria img {
+      max-width: 90%; /* Limita el tamaño de las imágenes */
+      height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  /* Formularios */
+  form {
+      width: 90%; /* Ajusta el formulario para que ocupe el 90% del ancho */
+      margin: 0 auto; /* Centra el formulario */
+  }
